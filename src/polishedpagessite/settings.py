@@ -102,15 +102,22 @@ WSGI_APPLICATION = 'polishedpagessite.wsgi.application'
 TEMPLATE_DIRS = ('C:/Users/kpartington/PycharmProjects/polishedpagessite/templates',)
 
 INSTALLED_APPS = (
+    # django.contrib
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+
+    # external/3rd party
+    'tastypie',
+    'tastypie_mongoengine',
+
+    # in-house
     'polishedpages',
 )
+
+# Connect to MongoDB.
+import mongoengine
+mongoengine.connect(MONGO_DATABASE_NAME)
