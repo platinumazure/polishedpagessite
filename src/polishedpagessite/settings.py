@@ -99,8 +99,6 @@ ROOT_URLCONF = 'polishedpagessite.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'polishedpagessite.wsgi.application'
 
-TEMPLATE_DIRS = ('C:/Users/kpartington/PycharmProjects/polishedpagessite/templates',)
-
 INSTALLED_APPS = (
     # django.contrib
     'django.contrib.auth',
