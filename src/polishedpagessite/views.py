@@ -1,0 +1,6 @@
+from django.shortcuts import render
+
+""" Views for rendering site pages. """
+
+def home(request):
+    return render(request, 'index.html')

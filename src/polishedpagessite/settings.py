@@ -1,3 +1,4 @@
+import os
 from django.core.exceptions import ImproperlyConfigured
 
 # Django settings for polishedpagessite project.
@@ -115,6 +116,13 @@ INSTALLED_APPS = (
     # in-house
     'polishedpages',
 )
+
+_SITE_TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), 'templates')
+
+try:
+    TEMPLATE_DIRS = TEMPLATE_DIRS + (_SITE_TEMPLATE_DIR,)
+except NameError:
+    TEMPLATE_DIRS = (_SITE_TEMPLATE_DIR,)
 
 # Connect to MongoDB.
 import mongoengine
