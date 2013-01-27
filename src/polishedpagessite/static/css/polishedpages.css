@@ -14,7 +14,7 @@ html
 
 body
 {
-	background-color: #105802;
+	background-color: #ffff88;
 	color: #000000;
 
 	font-size: 1.0em;
@@ -24,8 +24,8 @@ body
 body > div
 {
 	background-color: #faf9f0;
-	max-width: 1000px;
-	margin: 0.8em auto;
+	max-width: 1200px;
+	margin: 0 auto;
 	padding: 0.2em;
 }
 
