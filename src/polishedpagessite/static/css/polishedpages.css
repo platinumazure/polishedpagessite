@@ -56,3 +56,31 @@ h4
 {
 	font-size: 1.25em;
 }
+
+/*** The Home Page ***/
+
+header#home-header
+{
+	padding: 0.5em 1.0em;
+	margin-bottom: 1.5em;
+}
+
+header#home-header > h1
+{
+	font-size: 3.0em;
+	float: left;
+	vertical-align: middle;
+}
+
+header#home-header > h2
+{
+	font-size: 1.25em;
+	font-style: italic;
+	vertical-align: middle;
+	text-align: right;
+}
+
+header#home-header + section, header#home-header + article
+{
+	clear: both;
+}
