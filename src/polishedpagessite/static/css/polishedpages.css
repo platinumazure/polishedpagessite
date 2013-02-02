@@ -21,7 +21,7 @@ body
 	font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;
 }
 
-body > div
+body > div, body > footer
 {
 	background-color: #faf9f0;
 	max-width: 1200px;
@@ -55,6 +55,24 @@ h3
 h4
 {
 	font-size: 1.25em;
+}
+
+/*** The footer ***/
+
+footer#footer-main
+{
+	margin-top: 0.75em;
+	font-size: 0.9em;
+}
+
+#copyright
+{
+	font-style: italic;
+}
+
+#copyright + *
+{
+	float: right;
 }
 
 /*** The Home Page ***/
