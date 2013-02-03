@@ -29,6 +29,24 @@ body > div, body > footer
 	padding: 0.2em;
 }
 
+/*** Hyperlinks ***/
+
+a
+{
+	text-decoration: none;
+	color: #0000cc;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+a:active
+{
+	color: #cc0000;
+}
+
 /*** Headers ***/
 
 h1,h2,h3,h4
