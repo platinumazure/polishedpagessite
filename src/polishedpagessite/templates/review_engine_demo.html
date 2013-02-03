@@ -1,0 +1,40 @@
+{% extends "layouts/one_column.html" %}
+
+{% block content %}
+  <h1>Review Engine Demo</h1>
+  <div data-bind="template: { name: 'paragraph', foreach: paragraphs }"></div>
+{% endblock %}
+
+{% block scripts %}
+  <script type="text/javascript" src="/static/js/review_engine.js"></script>
+{% endblock %}
+
+{% block inlinescript %}
+
+var loremIpsum = [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium metus eu purus sodales ac volutpat leo bibendum. Nam id facilisis nulla. Nam id dui nisi, sed rutrum tellus. Etiam aliquet, nisi nec congue gravida, felis dolor porttitor justo, nec dapibus leo velit sagittis elit. Integer molestie sagittis tempus. In quis lorem ante, in ultrices eros. Praesent nunc sem, pretium a consectetur id, bibendum eget elit. In pretium, urna eget tempor consectetur, ante felis tincidunt ante, in ultrices turpis risus at dolor."
+];
+
+var viewModel = new ReviewEngineViewModel(loremIpsum);
+ko.applyBindings(viewModel);
+
+{% endblock %}
+
+{% block templates %}
+  <script type="text/html" id="paragraph">
+    <div class="paragraph" data-bind="template: { name: 'sentence', foreach: sentences }"></div>
+  </script>
+        
+  <script type="text/html" id="sentence">
+    <span class="sentence" data-bind="template: { name: 'clause', foreach: clauses }"></span>
+  </script>
+          
+  <script type="text/html" id="clause">
+    <span class="clause" data-bind="template: { name: 'word', foreach: words }"></span>
+  </script>
+          
+  <script type="text/html" id="word">
+    <span class="punctuation" data-bind="if: prefix, text: prefix"></span><span class="word" data-bind="text: word"></span><span class="punctuation" data-bind="if: suffix, text: suffix"></span>
+  </script>
+
+{% endblock %}
