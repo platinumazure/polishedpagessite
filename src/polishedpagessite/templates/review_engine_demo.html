@@ -34,7 +34,7 @@ ko.applyBindings(viewModel);
   </script>
           
   <script type="text/html" id="word">
-    <span class="punctuation" data-bind="if: prefix, text: prefix"></span><span class="word" data-bind="text: word"></span><span class="punctuation" data-bind="if: suffix, text: suffix"></span>
+    <!-- ko if: prefix --><span class="punctuation" data-bind="text: prefix"></span><!-- /ko --><span class="word" data-bind="text: word"></span><!-- ko if: suffix --><span class="punctuation" data-bind="if: suffix, text: suffix"></span><!-- /ko -->
   </script>
 
 {% endblock %}
