@@ -13,7 +13,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 try:
-    from .local_settings import DATABASES, MONGO_DATABASE_NAME, LOGGING
+    from .local_settings import DATABASES, LOGGING
 except ImportError as ex:
     raise ImproperlyConfigured('Could not import local_settings. '
         'Make sure you have created a local_settings file. ({})'.format(ex))
@@ -112,7 +112,6 @@ INSTALLED_APPS = (
 
     # external/3rd party
     'tastypie',
-    'tastypie_mongoengine',
 
     # in-house
     'polishedpages',
@@ -124,7 +123,3 @@ try:
     TEMPLATE_DIRS = TEMPLATE_DIRS + (_SITE_TEMPLATE_DIR,)
 except NameError:
     TEMPLATE_DIRS = (_SITE_TEMPLATE_DIR,)
-
-# Connect to MongoDB.
-import mongoengine
-mongoengine.connect(MONGO_DATABASE_NAME)
