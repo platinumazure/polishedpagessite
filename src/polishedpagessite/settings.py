@@ -112,6 +112,7 @@ INSTALLED_APPS = (
 
     # external/3rd party
     'south',
+    'rest_framework',
 
     # in-house
     'polishedpages',
