@@ -17,4 +17,3 @@ Dependencies
 
   * Python 2.7 (reference: 2.7.3)
   * Django 1.4 (reference: 1.4.1)
-  * MongoDB 2.2
