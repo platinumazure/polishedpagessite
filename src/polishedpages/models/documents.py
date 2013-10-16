@@ -1,8 +1,9 @@
 """ Document/draft models. """
 from django.db import models
-
-class Draft(models.Model):
-    pass
+from .authors import AuthorProfile
 
 class Document(models.Model):
-    pass
+    author = models.ForeignKey(AuthorProfile)
+
+class Draft(models.Model):
+    document = models.ForeignKey(Document)
