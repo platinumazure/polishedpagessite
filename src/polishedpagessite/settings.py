@@ -4,7 +4,10 @@ from django.core.exceptions import ImproperlyConfigured
 
 # Try to import local settings.
 try:
-    from .local_settings import DATABASES, LOGGING
+    from .local_settings import (DATABASES, LOGGING, DEBUG, TEMPLATE_DEBUG,
+        ADMINS, MANAGERS, TIME_ZONE, LANGUAGE_CODE, SITE_ID,
+        USE_I18N, USE_L10N, USE_TZ,
+        MEDIA_ROOT, MEDIA_URL, STATIC_ROOT, STATICFILES_DIRS)
 except ImportError as ex:
     raise ImproperlyConfigured('Could not import local_settings. '
         'Make sure you have created a local_settings file. ({})'.format(ex))
