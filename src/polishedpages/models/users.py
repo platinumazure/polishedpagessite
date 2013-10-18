@@ -1,7 +1,6 @@
 """ User models. """
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
-from .authors import AuthorProfile
 
 APP_LABEL = 'polishedpages'
 
@@ -35,7 +34,6 @@ class BasicUser(AbstractBaseUser):
     )
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
-    author_profile = models.ForeignKey(AuthorProfile, null=True, default=None)
 
     objects = BasicUserManager()
 
