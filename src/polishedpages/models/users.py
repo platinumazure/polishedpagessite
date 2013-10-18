@@ -35,7 +35,7 @@ class BasicUser(AbstractBaseUser):
     )
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
-    author_profile = models.ForeignKey(AuthorProfile)
+    author_profile = models.ForeignKey(AuthorProfile, null=True, default=None)
 
     objects = BasicUserManager()
 
