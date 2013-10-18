@@ -72,3 +72,6 @@ try:
     TEMPLATE_DIRS = TEMPLATE_DIRS + (_SITE_TEMPLATE_DIR,)
 except NameError:
     TEMPLATE_DIRS = (_SITE_TEMPLATE_DIR,)
+
+# Custom user model
+AUTH_USER_MODEL = 'polishedpages.BasicUser'

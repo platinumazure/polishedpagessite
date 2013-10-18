@@ -2,3 +2,4 @@
 
 from .authors import AuthorProfile
 from .documents import Draft, Document
+from .users import BasicUser
