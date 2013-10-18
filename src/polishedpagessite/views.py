@@ -1,9 +1,5 @@
-from django.shortcuts import render
-
 """ Views for rendering site pages. """
+from django.views.generic import TemplateView
 
-def home(request):
-    return render(request, 'index.html')
-
-def demo(request):
-    return render(request, 'review_engine_demo.html')
+class HomeView(TemplateView):
+    template_name = 'index.html'
