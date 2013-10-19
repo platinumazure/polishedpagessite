@@ -1,0 +1,13 @@
+{% extends "layouts/one_column.html" %}
+{% block content %}
+        <header id="registration_complete_header">
+          <h1>Registration complete!</h1>
+        </header>
+
+        <article>
+          <p>
+            Your account has been created successfully! Click
+            <a href="{% url "home" %}">here</a> to return to the home page.
+          </p>
+        </article>
+{% endblock %}

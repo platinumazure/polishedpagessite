@@ -1,0 +1,19 @@
+{% extends "layouts/one_column.html" %}
+{% block content %}
+      <header id="register-header">
+        <h1>Registration</h1>
+      </header>
+
+      <article>
+        <p>
+          To create an account on Polished Pages, please fill out the form
+          below:
+        </p>
+
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <p><input type="submit" value="Create account"></p>
+        </form>
+      </article>
+{% endblock %}
