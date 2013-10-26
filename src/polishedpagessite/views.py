@@ -2,7 +2,7 @@
 from django.core import urlresolvers
 from django.views.generic import TemplateView, CreateView
 from polishedpages.models import BasicUser
-from .forms import RegistrationForm
+from polishedpages.forms import RegistrationForm
 
 class HomeView(TemplateView):
     template_name = 'index.html'
