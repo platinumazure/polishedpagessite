@@ -1,0 +1,18 @@
+{% extends "layouts/one_column.html" %}
+{% block content %}
+      <header id="register-header">
+        <h1>Logging In</h1>
+      </header>
+
+      <article>
+        <p>
+          To log in, please fill out the form below:
+        </p>
+
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <p><input type="submit" value="Log in"></p>
+        </form>
+      </article>
+{% endblock %}
