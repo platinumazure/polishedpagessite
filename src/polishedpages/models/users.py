@@ -1,5 +1,9 @@
 """ User models. """
 from django.db import models
+from django.dispatch import receiver
+from django.utils.translation import ugettext as _
+from django.contrib import messages
+from django.contrib.auth.signals import user_logged_out
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
 APP_LABEL = 'polishedpages'
@@ -11,7 +15,7 @@ class BasicUserManager(BaseUserManager):
             raise ValueError('Users must have an email address')
 
         user = self.model(
-            email=BasicUserManager.normalize_email(email),
+            email=self.normalize_email(email),
         )
 
         user.set_password(password)
@@ -66,3 +70,13 @@ class BasicUser(AbstractBaseUser):
         "Is the user a member of staff?"
         # Simplest possible answer: All admins are staff
         return self.is_admin
+
+# Signal handlers
+@receiver(user_logged_out, sender=BasicUser)
+def add_logout_message(sender, request, **kwargs):
+    messages.success(
+        request,
+        _('You have successfully logged out. Thank you for using '
+            'Polished Pages!'),
+        fail_silently=True,
+    )

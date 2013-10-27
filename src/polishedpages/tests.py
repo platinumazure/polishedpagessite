@@ -1,7 +1,10 @@
 """Unit tests for the polishedpages app."""
 from django.test import TestCase
 from django.contrib.auth.hashers import check_password
+from django.contrib.auth import signals as auth_signals
 from .forms import RegistrationForm
+from .models import BasicUser
+from .utilities import messagetests
 
 class RegistrationFormTest(TestCase):
     def test_form_invalid_if_password2_not_equal_to_password1(self):
@@ -48,3 +51,9 @@ class RegistrationFormTest(TestCase):
 
         # assert
         self.assertTrue(check_password('passwd', user.password))
+
+class LogoutMessageTest(TestCase, messagetests.Messages):
+    def test_logout_adds_logout_message(self):
+        with self.messages_request() as request:
+            auth_signals.user_logged_out.send(BasicUser, request=request)
+            self.assertMessageCount(request, 1)

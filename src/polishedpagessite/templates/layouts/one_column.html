@@ -2,6 +2,16 @@
 
 {% block page_layout %}
     <div class="one_column">
+      {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+          {{ message }}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
       {% block content %}{% endblock %}
     </div>
     {% include "layouts/_footer.html" %}
