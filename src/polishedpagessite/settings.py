@@ -75,3 +75,6 @@ except NameError:
 
 # Custom user model
 AUTH_USER_MODEL = 'polishedpages.BasicUser'
+
+# Login/logout settings
+LOGIN_URL = '/account/login'

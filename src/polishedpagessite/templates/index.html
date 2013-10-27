@@ -16,6 +16,11 @@
           <a href="{% url "login" %}">here</a>. If not, feel free to
           <a href="{% url "register" %}">register</a> a new account!
         </p>
+        {% else %}
+        <p>
+          Welcome! You are currently logged in. Click
+          <a href="{% url "logout" %}">here</a> to log out.
+        </p>
         {% endif %}
       </article>
 {% endblock %}
