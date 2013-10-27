@@ -76,6 +76,11 @@ STATICFILES_DIRS = (
     os.path.join(os.path.dirname(__file__), 'static'),
 )
 
+# Template directories (Note: This is an empty list by default. Whatever is
+# in here will be concatenated with a site-level template directory in the
+# main settings file.)
+TEMPLATE_DIRS = []
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
