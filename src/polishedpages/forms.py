@@ -1,16 +1,21 @@
 """ Polished Pages forms. """
 from django import forms
+from django.utils.translation import ugettext_lazy as _
 from polishedpages.models import BasicUser
 
 class RegistrationForm(forms.ModelForm):
     password1 = forms.CharField(
-        label='Password',
+        label=_('Password'),
         widget=forms.PasswordInput,
     )
     password2 = forms.CharField(
-        label='Confirm password',
+        label=_('Confirm password'),
         widget=forms.PasswordInput,
     )
+
+    error_messages = {
+        'password_mismatch': _("Passwords are not the same."),
+    }
 
     class Meta:
         model = BasicUser
@@ -20,7 +25,8 @@ class RegistrationForm(forms.ModelForm):
         pw1 = self.cleaned_data['password1']
         pw2 = self.cleaned_data['password2']
         if pw1 != pw2:
-            raise forms.ValidationError("Passwords are not the same!")
+            raise forms.ValidationError(
+                self.error_messages['password_mismatch'])
         return pw2
 
     def save(self, commit=True):
