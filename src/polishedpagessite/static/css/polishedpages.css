@@ -21,6 +21,16 @@ body
 	font-family:Verdana,Geneva,'DejaVu Sans',sans-serif;
 }
 
+p:first-child
+{
+	margin-top: 0;
+}
+
+p
+{
+	margin-top: 1.0em;
+}
+
 body > div, body > footer
 {
 	background-color: #faf9f0;
