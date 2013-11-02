@@ -5,13 +5,7 @@
     <div class="one_column">
       {% block header %}{% endblock %}
 
-    {% if messages %}
-      {% for message in messages %}
-      <aside class="message {{ message.tags }}">
-        {{ message }}
-      </aside>
-      {% endfor %}
-    {% endif %}
+      {% include "partials/messages.html" %}
 
       {% block content %}{% endblock %}
     </div>
