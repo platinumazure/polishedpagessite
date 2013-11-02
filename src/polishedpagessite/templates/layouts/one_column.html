@@ -5,17 +5,13 @@
     <div class="one_column">
       {% block header %}{% endblock %}
 
-      {% if messages %}
-      <aside class="messages">
-        <ul>
-          {% for message in messages %}
-          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-            {{ message }}
-          </li>
-          {% endfor %}
-        </ul>
+    {% if messages %}
+      {% for message in messages %}
+      <aside class="message {{ message.tags }}">
+        {{ message }}
       </aside>
-      {% endif %}
+      {% endfor %}
+    {% endif %}
 
       {% block content %}{% endblock %}
     </div>

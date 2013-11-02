@@ -103,6 +103,16 @@ footer#footer-main
 	float: right;
 }
 
+/*** Site messages ***/
+aside.message
+{
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #999;
+
+	text-align: center;
+}
+
 /*** The Home Page ***/
 
 header#home-header
