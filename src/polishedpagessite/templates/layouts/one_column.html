@@ -1,15 +1,20 @@
 {% extends "layouts/base.html" %}
 
 {% block page_layout %}
+
     <div class="one_column">
+      {% block header %}{% endblock %}
+
       {% if messages %}
-      <ul class="messages">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-          {{ message }}
-        </li>
-        {% endfor %}
-      </ul>
+      <aside class="messages">
+        <ul>
+          {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+            {{ message }}
+          </li>
+          {% endfor %}
+        </ul>
+      </aside>
       {% endif %}
 
       {% block content %}{% endblock %}

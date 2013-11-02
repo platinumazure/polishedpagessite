@@ -126,7 +126,7 @@ header#home-header > h2
 	text-align: right;
 }
 
-header#home-header + section, header#home-header + article
+header#home-header + section, header#home-header + article, header#home-header + aside
 {
 	clear: both;
 }
