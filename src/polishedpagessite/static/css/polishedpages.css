@@ -104,7 +104,12 @@ footer#footer-main
 }
 
 /*** Site messages ***/
-aside.message
+aside.message.success
+{
+	background-color: #b3ffba;
+}
+
+.one_column aside.message
 {
 	padding: 10px;
 	margin: 10px 0;
