@@ -70,9 +70,11 @@ INSTALLED_APPS = (
 _SITE_TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), 'templates')
 
 try:
-    TEMPLATE_DIRS = TEMPLATE_DIRS + (_SITE_TEMPLATE_DIR,)
+    TEMPLATE_DIRS = list(TEMPLATE_DIRS)
 except NameError:
-    TEMPLATE_DIRS = (_SITE_TEMPLATE_DIR,)
+    TEMPLATE_DIRS = []
+
+TEMPLATE_DIRS.append(_SITE_TEMPLATE_DIR)
 
 # Custom user model
 AUTH_USER_MODEL = 'polishedpages.BasicUser'
