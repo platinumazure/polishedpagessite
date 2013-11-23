@@ -1,27 +1,38 @@
 {% extends "layouts/one_column.html" %}
 {% block header %}
       <header id="home-header">
-        <h1>Polished Pages</h1>
+        <h1>{% trans "Polished Pages" %}</h1>
         <h2>
-          The ultimate document draft manager for writers and editors
+          {% trans "The ultimate document draft manager for writers and editors" %}
         </h2>
       </header>
 {% endblock %}
 
 {% block content %}
       <article>
-        <p>Hello, world! Welcome to Polished Pages.</p>
+        <p>
+          {% blocktrans %}
+          Hello, world! Welcome to Polished Pages, the ultimate document draft
+          manager for writers and editors. Our mission is to connect aspiring
+          writers to willing editors to help generate more and better writing
+          in a world in which quality no longer stands out as it should.
+          {% endblocktrans %}
+        </p>
 
         {% if not user.is_authenticated %}
         <p>
+          {% blocktrans %}
           If you already have an account, you can log in
           <a href="{% url "login" %}">here</a>. If not, feel free to
           <a href="{% url "register" %}">register</a> a new account!
+          {% endblocktrans %}
         </p>
         {% else %}
         <p>
+          {% blocktrans %}
           Welcome! You are currently logged in. Click
           <a href="{% url "logout" %}">here</a> to log out.
+          {% endblocktrans %}
         </p>
         {% endif %}
       </article>
