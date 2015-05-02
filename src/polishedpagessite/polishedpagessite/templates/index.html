@@ -1,4 +1,6 @@
 {% extends "layouts/one_column.html" %}
+{% load i18n %}
+
 {% block header %}
       <header id="home-header">
         <h1>{% trans "Polished Pages" %}</h1>
@@ -20,18 +22,21 @@
         </p>
 
         {% if not user.is_authenticated %}
+        {% url "login" as login_url %}
+        {% url "register" as register_url %}
         <p>
           {% blocktrans %}
           If you already have an account, you can log in
-          <a href="{% url "login" %}">here</a>. If not, feel free to
-          <a href="{% url "register" %}">register</a> a new account!
+          <a href="{{ login_url }}">here</a>. If not, feel free to
+          <a href="{{ register_url }}">register</a> a new account!
           {% endblocktrans %}
         </p>
         {% else %}
+        {% url "logout" as logout_url %}
         <p>
           {% blocktrans %}
           Welcome! You are currently logged in. Click
-          <a href="{% url "logout" %}">here</a> to log out.
+          <a href="{{ logout_url }}">here</a> to log out.
           {% endblocktrans %}
         </p>
         {% endif %}
