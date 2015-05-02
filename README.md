@@ -16,4 +16,4 @@ Dependencies
 ------------
 
   * Python 2.7 (reference: 2.7.3)
-  * Django 1.5 (reference: 1.5.1)
+  * Django 1.8 (reference: 1.8.2)
