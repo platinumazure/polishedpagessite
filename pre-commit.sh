@@ -9,7 +9,7 @@
 git stash -q --keep-index
 
 # Test prospective commit
-python src/manage.py test polishedpages
+python src/polishedpagessite/manage.py test polishedpages
 RESULT=$?
 
 # Pop the stash to reinsert unstaged changes into working tree
