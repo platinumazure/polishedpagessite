@@ -60,7 +60,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # external/3rd party
-    'south',
     'rest_framework',
 
     # in-house
